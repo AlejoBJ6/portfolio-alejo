@@ -14,6 +14,34 @@
     --shadow-solid: 5px 5px 0px 0px rgba(0, 0, 0, 1);
 }
 
+/* Estilos para el Modo Oscuro */
+body.dark-mode {
+    --primary-color: #ffffff;     /* El negro pasa a blanco */
+    --secondary-color: #cccccc;
+    --text-dark: #f5f5f5;         /* Texto oscuro pasa a claro */
+    --text-light: #a0a0a0;
+    --bg-light: #1a1a1a;          /* Fondos claros pasan a oscuros */
+    --bg-white: #000000;
+    --border: #444444;
+}
+
+/* Estilo del botón del tema */
+.btn-theme {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-theme:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+}
+
 /* Reset */
 * {
     margin: 0;

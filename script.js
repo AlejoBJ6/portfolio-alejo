@@ -1,5 +1,31 @@
 // Script para interactividad y efectos del portfolio
 
+// ===== TOGGLE DE TEMA OSCURO =====
+const toggleButton = document.getElementById('theme-toggle');
+const body = document.body;
+const icon = toggleButton.querySelector('i');
+
+// 1. Revisar si el usuario ya tenía un modo guardado
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    icon.classList.replace('fa-moon', 'fa-sun'); // Cambia luna por sol
+}
+
+// 2. Escuchar el clic
+toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    // Cambiar ícono y guardar preferencia
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        icon.classList.replace('fa-moon', 'fa-sun');
+    } else {
+        localStorage.setItem('theme', 'light');
+        icon.classList.replace('fa-sun', 'fa-moon');
+    }
+});
+
+// ===== RESTO DE LA FUNCIONALIDAD =====
 // Efecto de scroll en los enlaces del menú
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
